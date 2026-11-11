@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mosaic: films, music and clips</title>
+<meta name="theme-color" content="#17111f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mosaic"><meta name="mosaic-api" content=""><meta name="mosaic-support" content="">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./mosaic.css">
+
+
+
+
+</head><body>
+<div class="app">
+<aside><div class="logo"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect width="7" height="7" rx="2" fill="#5b7cf0"/><rect x="9.5" width="7" height="7" rx="2" fill="#a77bd6"/><rect x="19" width="7" height="7" rx="2" fill="#e5637a"/><rect y="9.5" width="7" height="7" rx="2" fill="#38b58c"/><rect x="9.5" y="9.5" width="7" height="7" rx="2" fill="#f6efe6"/><rect x="19" y="9.5" width="7" height="7" rx="2" fill="#f2b24c"/><rect y="19" width="7" height="7" rx="2" fill="#38b58c"/><rect x="9.5" y="19" width="7" height="7" rx="2" fill="#5b7cf0"/><rect x="19" y="19" width="7" height="7" rx="2" fill="#e5637a"/></svg>mosaic<i>.</i></div><nav id="nav" aria-label="Main navigation">
+ <button data-t="home" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>Home</button><button data-t="m"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M17 9h4M3 15h4M17 15h4"/></svg>Films</button><button data-t="c" aria-label="Open Reels feed" title="Reels"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M10 8l5 4-5 4z" fill="currentColor" stroke="none"/></svg>Reels</button><button data-t="a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>Music</button><button data-t="x"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>Lab</button><button data-t="l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Library</button></nav></aside>
+<main><div class="top"><input id="q" type="search" placeholder="Search films, songs, clips" aria-label="Search"><label class="b o addf" style="cursor:pointer" title="Add your files" aria-label="Add your files"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="lt">Add files</span><input id="f" type="file" accept="video/*,audio/*" multiple hidden></label><button class="b o" id="inst" style="display:none">Install app</button><button class="avb" id="avb" aria-label="Switch profile"></button><button class="ib" id="stbtn" aria-label="Settings" title="Settings"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div><div id="main"></div></main></div>
+<div id="mini" aria-label="Mini player"><div class="mp"><i id="mFill"></i></div><div class="ma" id="mA"></div><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><button class="b" id="mPlay" aria-label="Play or pause">Pause</button><button type="button" class="t" id="mOpen" aria-label="Open full player"><b id="mT"></b><br><small id="mS"></small></button></div>
+<div id="stage"><div class="screen"><canvas id="cv"></canvas><video id="vid" playsinline></video><div id="sub"></div><div id="nu"><div><small id="nus"></small><b id="nut"></b></div><button class="b" id="nuy">Play now</button><button class="b o" id="nun">Cancel</button></div></div>
+<div class="meta"><h3 id="sT"></h3><p id="sS"></p></div>
+<div class="ctl tr"><button class="b o" id="pv" aria-label="Previous">Prev</button><button class="b o" id="bk" aria-label="Back 10 seconds">-10s</button><button class="b" id="sPlay">Pause</button><button class="b o" id="fw" aria-label="Forward 10 seconds">+10s</button><button class="b o" id="nx" aria-label="Next">Next</button>
+</div><div class="ctl sk"><span class="time" id="tc">0:00</span><div class="bar" id="sBar"><i id="sFill"></i><span id="mks"></span></div><span class="time" id="td">0:00</span></div>
+<div class="ctl vr"><button class="b o" id="mute">Mute</button><input id="vol" type="range" min="0" max="1" step="0.05" value="0.7"><span class="time" id="vp">70%</span><button class="b o" id="sv"></button><button class="b o" id="sD" style="display:none">Remove from library</button><button class="b o" id="sC" style="margin-left:auto">Close</button></div><div class="ctl mr"><button class="b o" id="spd">1x</button><button class="b o" id="slp">Sleep: off</button><button class="b o" id="pip">Picture in picture</button><button class="b o" id="fs">Full screen</button><button class="b o" id="rpt">Repeat: all</button><button class="b o" id="shf">Shuffle: off</button><button class="b o" id="cc">Add subtitles</button><button class="b o" id="ccz" style="display:none" aria-label="Caption size">Aa</button><button class="b o" id="bm">Bookmark</button><button class="b o" id="bml">Bookmarks (0)</button><button class="b o" id="lk">Like</button><button class="b o" id="dl">Dislike</button><button class="b o" id="stu">Studio</button><button class="b o" id="vst">Visual: Aurora</button><button class="b o" id="abl">A-B loop</button><button class="b o" id="apl">Add to playlist</button><button class="b o" id="qb">Add to queue</button><button class="b o" id="qv">Up next (0)</button></div></div>
+ <div id="splash" role="dialog" aria-modal="true" aria-label="Mosaic is starting" aria-describedby="ps" aria-busy="true" tabindex="-1">
+  <div class="mos" id="mos" aria-hidden="true"></div>
+  <div class="wm" aria-hidden="true">mosaic<i>.</i></div>
+  <div class="load-row"><div class="pg" role="progressbar" aria-label="Preparing your Mosaic library" aria-valuemin="0" aria-valuemax="100" aria-valuenow="4"><i id="pf"></i></div><span id="loadPct" aria-hidden="true">04%</span></div>
+  <div class="splash-status"><i aria-hidden="true"></i><small id="ps" role="status" aria-live="polite">Setting out your library</small></div>
+  <button class="b" id="enter" style="display:none" type="button"><span>Enter Mosaic</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+</div><audio id="sink" playsinline></audio>
+<dialog id="sm"><div class="sh"><h3>Settings</h3><button class="ib" id="smx" aria-label="Close settings" style="margin:0"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div id="ap"></div></dialog>
+<dialog id="qd"><h3>Up next</h3><input id="qs" type="search" placeholder="Search queue" aria-label="Search queue"><div id="ql"></div><div class="acts"><button class="b o" id="qc">Clear</button><button class="b" id="qx">Done</button></div></dialog>
+<dialog id="cp"><input id="cpi" placeholder="Search films, songs and clips" aria-label="Search everything"><div id="cpr"></div></dialog>
+<dialog id="kb"><h3>Shortcuts</h3><div class="cnt" style="line-height:2">Ctrl or Cmd + K, or /: search everything<br>Space: play or pause<br>Left and Right arrows: skip 5 seconds<br>Up and Down arrows: volume<br>M: mute<br>Esc: close the player or a dialog<br>?: this list</div><div class="acts"><button class="b" onclick="this.closest('dialog').close()">Got it</button></div></dialog>
+<dialog id="pd"><h3>Playlists</h3><div id="pl"></div><div class="orow"><input id="pn" class="pin" placeholder="New playlist name" aria-label="New playlist name"><button class="b" id="pc">Create</button></div><div class="acts"><button class="b o" id="px">Done</button></div></dialog>
+ <dialog id="eq"><h3>Studio</h3><p class="cnt" style="margin:0">Shapes everything you hear: built-in music and your own files.</p><div class="chips" id="eqp"></div><div class="eqw" id="eqs"></div><div class="orow"><span>Bass boost</span><button class="chip" id="bb">Off</button></div><div class="orow"><span>Dynamics</span><select id="dyn" aria-label="Dynamics processing"><option value="off">Off</option><option value="compressor">Compressor</option><option value="limiter">Peak limiter</option></select></div><div class="orow"><span>Crossfade</span><input type="range" id="xf" min="0" max="8" step="1" value="0"><span class="time" id="xv">Off</span></div><div class="acts"><button class="b o" id="eqr">Reset</button><button class="b" id="eqx">Done</button></div></dialog>
+<div id="dim" style="display:none;position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:90"></div>
+<dialog id="pro"><h3>Who's watching?</h3><div class="pgrid" id="pg"></div><div class="acts"><button class="b o" id="pe">Manage profiles</button><button class="b" id="px2">Done</button></div></dialog>
+<input type="file" id="cf" accept=".srt,.vtt,.lrc,text/plain,text/vtt" hidden>
+<dialog id="bd"><h3>Bookmarks</h3><div id="bl"></div><div class="acts"><button class="b" id="bx">Done</button></div></dialog>
+<dialog id="pnd"><h3 id="pnt">Enter PIN</h3><p class="cnt" id="pns"></p><input id="pni" class="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" aria-label="PIN" style="width:100%"><div class="acts"><button class="b o" id="pnc">Cancel</button><button class="b" id="pnk">Confirm</button></div></dialog>
+<dialog id="hp"><div class="sh"><h3>Help</h3><button class="ib" id="hpx" aria-label="Close help" style="margin:0"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div id="hpb"></div></dialog>
+<div id="tour" style="display:none"><div id="tspot"></div><div id="tcard"><b id="tt"></b><p id="td2"></p><div class="acts"><button class="b o" id="tsk">Skip</button><button class="b o" id="tbk">Back</button><button class="b" id="tnx">Next</button></div></div></div>
+<button id="hlp" aria-label="Help and tour">?</button>
+<dialog id="imp"><h3>Add to your library</h3><p>We sorted these for you. Rename or change the category before adding.</p><div id="rows"></div><p id="stor" class="cnt"></p><div class="acts"><button class="b o" id="no">Cancel</button><button class="b" id="ok">Add</button></div></dialog>
+<div id="toast" role="status"></div><div id="drop">Drop files to add them to your library</div>
+<script defer src="./scripts/app-core.js"></script>
+<script defer src="./scripts/library-storage.js"></script>
+<script defer src="./scripts/accessibility-privacy.js"></script>
+<script defer src="./scripts/profile-onboarding.js"></script>
+<script defer src="./scripts/audio-tracks-metadata.js"></script>
+<script defer src="./scripts/guided-tour.js"></script>
+<script defer src="./scripts/reels-experience.js"></script>
+<script defer src="./scripts/app-polish.js"></script>
+<script defer src="./scripts/motion-performance.js"></script>
+<script defer src="./scripts/profiles-library.js"></script>
+<script defer src="./scripts/service-worker-register.js"></script>
+<script defer src="./scripts/reels-community.js"></script>
+<script defer src="./scripts/player-menus.js"></script>
+<script id="mosaic-local-finishing" defer src="./scripts/local-finishing.js"></script>
+<script id="mosaic-system-check" defer src="./scripts/system-check.js"></script>
+<script id="mosaic-localization" defer src="./scripts/localization.js"></script>
+<script id="mosaic-player-accessibility-sync" defer src="./scripts/player-accessibility.js"></script>
+<script id="mosaic-player-media-shapes" defer src="./scripts/player-media-shapes.js"></script>
+<script id="mosaic-player-experience-layouts" defer src="./scripts/player-layouts.js"></script>
+
+<script id="mosaic-final-logic" defer src="./scripts/app-final-logic.js"></script>
+
+<script id="mosaic-redesign-js" defer src="./scripts/art-direction.js"></script>
+
+
+<script id="mosaic-redesign-2-js" defer src="./scripts/artwork.js"></script>
+
+
+</body></html>
+
+
+

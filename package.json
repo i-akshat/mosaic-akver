@@ -1,0 +1,12 @@
+{
+  "name": "mosaic",
+  "private": true,
+  "type": "module",
+  "version": "2.5.31",
+  "scripts": {
+    "build:standalone": "node scripts/build-standalone.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
